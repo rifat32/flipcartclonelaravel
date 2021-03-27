@@ -43,7 +43,7 @@ Route::middleware(['auth:api', 'adminMiddleware:api'])
 // ############################# ########### ########################
 Route::middleware('auth:api')
     ->group(function () {
-        Route::middleware('auth:api')->get('/users', function (Request $request) {
+        Route::get('/users', function (Request $request) {
             return $request->user();
         });
         Route::post('/carts', [cartsController::class, 'create']);
