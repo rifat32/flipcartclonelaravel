@@ -48,16 +48,7 @@ class AuthController extends Controller
     }
     public function signUp(Request $request)
     {
-        // $validator = Validator::make($request->all(), [
-        //     'firstName' => 'required||max:20||min:3',
-        //     'lastName' => 'required||max:20||min:3',
-        //     'email' => 'required||unique:users',
-        //     'password' => 'required||min:8',
-        // ]);
-        // if ($validator->fails()) {
-        //     $errors = $validator->errors();
-        //     return $errors;
-        // }
+
         if (DB::table('users')->where([
             'email' => $request->email
         ])->exists()) {
